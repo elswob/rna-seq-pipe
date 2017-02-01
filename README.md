@@ -1,7 +1,5 @@
 # Overview
 
-#### Author by Ben Elsworth (b.elsworth@garvan.org.au)
-
 ### Method
 
 1. Align reads to genome and transcriptome using Star
