@@ -1,1 +1,55 @@
-# rna-seq-pipe
+# Overview
+
+#### Author by Ben Elsworth (b.elsworth@garvan.org.au)
+
+### Method
+
+1. Align reads to genome and transcriptome using Star
+2. Count genome mappings using HTSeq and run Jesper's analysis
+3. Count transcript mappings using EdgeR and generate counts
+4. Generate bigwig files for reads mapping to genome
+
+# How to run the pipeline
+
+1) Get the code
+
+```
+ln -s /share/ClusterShare/biodata/contrib/benels/scripts/rna-seq_pipe/combined/ ./
+```
+
+2) Put all your FASTQ files in a fastq folder and name the folders with the sample names or how you want them.
+
+3) Create a txt file called Conditions.txt with folder/sample names and conditions in a tab delimited file
+
+```
+Sample1	Condition1
+Sample2 Condition1
+Sample3 Condition2
+Sample4 Condition2
+Sample5 Condition3
+Sample6 Condition3
+```
+
+4) Check setup - there should be three things in the directory:
+
+1. A folder containing the fastq files in separate sample folders with names corresponding to those in conditions file
+2. A Conditions.txt file as above
+3. A symlink to the pipeline
+
+5) To run the scripts just Run run.sh with the following arguements:  
+
+1. Number of CPUs  
+2. Species (Mouse or Human)  
+3. Location of a tmp directory
+4. Location of directory containing samples and fastq files  
+5. Strandedness (reverse, forward or no)
+
+```
+./combined/Run.sh 5 Mouse /path/to/temp/folder/ fastq_folder/ reverse
+```
+
+# Example data 
+
+A sub-sampled data set and Conditions.txt file are available here:
+
+smb://gagri.garvan.unsw.edu.au/Griw/Cancer-TumourProgression/projects/RNA-Seq-Pipeline/Test_data
