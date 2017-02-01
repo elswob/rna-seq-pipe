@@ -5,7 +5,7 @@
 ### Method
 
 1. Align reads to genome and transcriptome using Star
-2. Count genome mappings using HTSeq and run Jesper's analysis
+2. Count genome mappings using HTSeq
 3. Count transcript mappings using EdgeR and generate counts
 4. Generate bigwig files for reads mapping to genome
 
@@ -14,7 +14,7 @@
 1) Get the code
 
 ```
-ln -s /share/ClusterShare/biodata/contrib/benels/scripts/rna-seq_pipe/combined/ ./
+git clone https://github.com/elswob/rna-seq-pipe.git
 ```
 
 2) Put all your FASTQ files in a fastq folder and name the folders with the sample names or how you want them.
@@ -48,8 +48,3 @@ Sample6 Condition3
 ./combined/Run.sh 5 Mouse /path/to/temp/folder/ fastq_folder/ reverse
 ```
 
-# Example data 
-
-A sub-sampled data set and Conditions.txt file are available here:
-
-smb://gagri.garvan.unsw.edu.au/Griw/Cancer-TumourProgression/projects/RNA-Seq-Pipeline/Test_data
